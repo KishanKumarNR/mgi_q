@@ -1,33 +1,28 @@
 /**
- * @description function to calculate
- * @param arr
+ * @description function to find maximum profit given a buying price of weeks shares 
+ * @param arr week's buying price
  * @returns {number}
  */
 function getMaxProfit(arr) {
     var minIndex = 0;
     var maxIndex = 1;
-    var currMin = 0;
+    var minPrice = 0;
     var maxProfit = 0;
 
     if(arr.length < 2) {
-        throw new Error("Need atleast two time periods to be profitable!");
+        console.log("Need atleast 2 data items to continue!");
+        throw new Error("Need atleast 2 data items to continue!");
     }
 
     for(var i = 1; i < arr.length; i++) {
-
-        // new current min.
-        if(arr[i] < arr[currMin]) {
-            currMin = i;
+        if(arr[i] < arr[minPrice]) {
+            minPrice = i;
         }
-
-        // new best profit
-        if(arr[maxIndex] - arr[minIndex] < arr[i] - arr[currMin]) {
+        if(arr[maxIndex] - arr[minIndex] < arr[i] - arr[minPrice]) {
             maxIndex = i;
-            minIndex = currMin;
+            minIndex = minPrice;
         }
-
     }
-
     maxProfit  = arr[maxIndex] - arr[minIndex];
     console.log("[ ", arr[minIndex], arr[maxIndex], "]")
     console.log("O/P: Maxprofit is \t", maxProfit);
