@@ -7,24 +7,26 @@
  * @param allowOverlapping
  * @returns {number|*}
  */
-function findSubstr(string, subString, allowOverlapping=false) {
+function findSubstr(string, subString) {
 
     string += "";
     subString += "";
     if (subString.length <= 0) return (string.length + 1);
 
-    var n = 0,
+    var count = 0,
         pos = 0,
-        step = allowOverlapping ? 1 : subString.length;
+        substrLen = subString.length;
 
     while (true) {
         pos = string.indexOf(subString, pos);
         if (pos >= 0) {
-            ++n;
-            pos += step;
-        } else break;
+            ++count;
+            pos += substrLen;
+        } else {
+            break;
+        }
     }
-    return n;
+    return count;
 }
 
 let str, substr = "";
