@@ -1,6 +1,17 @@
 # mgi_q
-Solutions for the logical questions
+Solutions for the following questions as mentioned below
 
+## pre requesties & dependencies
+
+requires npm & nodejs 6v, 8v, 10v or 12v to run the program 
+
+## start server
+
+Run `node <filename.js>` for a local environment.
+
+## Code
+
+Terminal will ask for the input and output will be displayed.
 
 **Find if both the array has same digits**
 
